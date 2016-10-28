@@ -16,7 +16,14 @@ namespace RABLES
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            game BJGame = new game();
+
+            Console.WriteLine("Drawing card:");
+            //BJGame.drawCard().to;
+
             Application.Run(new Form1());
+
+
         }
     }
 }
