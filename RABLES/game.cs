@@ -15,7 +15,6 @@ namespace RABLES
         public Game()
         {
             activeGame.BeginHand();
-            activeGame.BeginHand();
         }
     }
 }
