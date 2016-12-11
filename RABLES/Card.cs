@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RABLES
 {
-    class Card
+    public class Card
     {
         public int value { get; set; } // 1 to 11 (ace)
         public char face { get; set; } // 11 = jack; 12 = queen; 13 = king; 14 = ace

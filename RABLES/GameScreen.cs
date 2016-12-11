@@ -14,7 +14,7 @@ namespace RABLES
     {
         //Game BJGame = new Game();
         GameState ActiveGame = new GameState();
-            
+        bool solveLoop = false;
         public GameScreen()
         {
             InitializeComponent();
@@ -59,6 +59,56 @@ namespace RABLES
         private void button8_Click(object sender, EventArgs e)
         {
             ActiveGame.Surrender();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            ActiveGame.AISolve();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 1000; i++)
+            {
+                ActiveGame.AITrain();
+            }
+            /*solveLoop = true;
+            while(solveLoop == true)
+            {
+                
+            }*/
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            ActiveGame.AITrain();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            ActiveGame.AILoad();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            ActiveGame.AIPrint();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            ActiveGame.AISave();
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            while (true)
+            {
+                for (int i = 0; i < 1000; i++)
+                {
+                    ActiveGame.AITrain();
+                }
+                ActiveGame.AISave();
+            }
         }
     }
 }
