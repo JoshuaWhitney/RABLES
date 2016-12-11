@@ -11,6 +11,7 @@ namespace RABLES
     {
         //Access with Player sum, then Dealer card
         int tableRef;
+        int timeTrained = 0;
         //Hard Table
         List<List<TableCell>> HardTable = new List<List<TableCell>>();
         
@@ -122,6 +123,7 @@ namespace RABLES
                 HardTable[tem][dealerCard].addEntry(3, surrUpdate);
                 HardTable[tem][dealerCard].incTimes();
             }
+            timeTrained++;
         }
 
         public void Print()
@@ -241,6 +243,7 @@ namespace RABLES
                 }
                 //file.Write("\n");
             }
+            file.Write(timeTrained);
             file.Close();
         }
 
@@ -281,7 +284,9 @@ namespace RABLES
                 SplitTable[int.Parse(line[0])][int.Parse(line[1])].Rewrite(line);
                 //Console.WriteLine();
             }
-            
+            timeTrained = int.Parse(file.ReadLine());
+
+
             file.Close();
         }
     }

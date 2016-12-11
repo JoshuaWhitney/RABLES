@@ -321,7 +321,8 @@ namespace RABLES
                 bool canDouble = allHands[curHand].Count == 2;
                 bool canSplit = true;
                 bool canSurrender = true;
-                bool matchingCards = (allHands[curHand][0].value == allHands[curHand][1].value || allHands[curHand][0].face == allHands[curHand][1].face) && allHands.Count == 2;
+                bool matchingCards = (allHands[curHand][0].value == allHands[curHand][1].value || allHands[curHand][0].face == allHands[curHand][1].face) && allHands[curHand].Count == 2;
+                Console.WriteLine("matchingCards: " + matchingCards + "; canDouble:" + canDouble + "; canSplit: " + canSplit);
 
                 int sol = solver.Solve(allHands[curHand], dCards[0].value, canDouble, canSplit, canSurrender, matchingCards);//Pass list of player cards, dealer up card, can double, can split
 
@@ -349,6 +350,11 @@ namespace RABLES
                         break;
                     case 4:
                         Console.WriteLine("split");
+                        if (allHands[curHand][0].face == 'A' && allHands[curHand][1].face == 'A')
+                        {
+                            allHands[curHand][0].value = 11;
+                            allHands[curHand][1].value = 11;
+                        }
                         Split();
                         break;
                 }
