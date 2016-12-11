@@ -32,7 +32,7 @@ namespace RABLES
 
         public GameState()
         {
-            //deck.Shuffle();
+            deck.Shuffle();
             p1Chips = 1000;
             dCards = new List<Card>();
         }
@@ -253,7 +253,7 @@ namespace RABLES
             int sum = hand.Sum(item => item.value);
             foreach (Card curCard in hand)
             {
-                if (curCard.value == 11 && sum <= 21)
+                if (curCard.value == 11 && sum > 21)
                 {
                     curCard.value = 1;
                 }
@@ -265,8 +265,9 @@ namespace RABLES
         {
             
             Console.WriteLine("\n\nDealer has: " + dCards[0].face + " " + dCards[1].face + ", total of " + dTotal);
+            Card softAce = dCards.Find(card => card.value == 11);
 
-            while (dTotal < 17)
+            while (dTotal < 17 || (dTotal == 17  && softAce != null))
             {
                 dCards.Add(deck.DrawCard());
                 checkDealerAce(dCards);
