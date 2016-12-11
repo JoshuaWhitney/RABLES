@@ -32,7 +32,7 @@ namespace RABLES
 
         public GameState()
         {
-            //deck.Shuffle();
+            deck.Shuffle();
             p1Chips = 1000;
             dCards = new List<Card>();
         }
@@ -253,7 +253,7 @@ namespace RABLES
             int sum = hand.Sum(item => item.value);
             foreach (Card curCard in hand)
             {
-                if (curCard.value == 11 && sum <= 21)
+                if (curCard.value == 11 && sum > 21)
                 {
                     curCard.value = 1;
                 }
@@ -348,6 +348,11 @@ namespace RABLES
                         break;
                     case 4:
                         Console.WriteLine("split");
+                        if (allHands[curHand][0].face == 'A' && allHands[curHand][1].face == 'A')
+                        {
+                            allHands[curHand][0].value = 11;
+                            allHands[curHand][1].value = 11;
+                        }
                         Split();
                         break;
                 }

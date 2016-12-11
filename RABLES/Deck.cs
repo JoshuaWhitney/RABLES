@@ -19,7 +19,7 @@ namespace RABLES
 
         public Deck(int decks = 8)
         {
-            // Quarantine: Split test deck
+            /* Quarantine: Split test deck
             
             Card newCard0 = new Card(0, (char)('A'), 11);
             Card newCard1 = new Card(0, (char)('T'), 10);
@@ -41,7 +41,7 @@ namespace RABLES
             deck.Add(newCard12);
             deck.Add(newCard12);
             deck.Add(newCard12);
-            
+            */
             
             /* Quarantine: SOFT 17 deck
             
