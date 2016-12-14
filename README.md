@@ -22,6 +22,7 @@ Interestingly, the AI had some very unusual choices  recorded as being optimal. 
 Additionally, with the AI learning complete and recorded, the practiced playing repeated rounds as if it were a real player, recording the number of chips in its possession after each hand. A mismatch of strategies (i.e. the AI plays as if the dealer hits on a soft 17, when the dealer is actually hitting) was run to observe how important it was to play according to the correct strategy.
 
 Although  all versions of the AI eventually reach 0 chips (The house always wins), it can be seen that the non-mismatched version of the AI performed significantly better than the mismatch versions.
+![Alt text](https://dl.dropboxusercontent.com/u/4353601/MiscImages/usu/BJLineGraph.png "ChipCountGraph")
 
 # Conclusion
 The AI has significant limitations in learning how to play blackjack optimally, though I suspect some of the blame may lie with the program it plays in. Even so, it’s clear how important it to play to the correct strategy.
